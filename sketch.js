@@ -8,18 +8,24 @@ var backgroundImg,platform;
 
 var constraint= Matter.Constraint;
 
-var slingshot
+var slingshot;
+
+var  ONSLING=0;
+var OFFSLING=1;
+var gameState=ONSLING;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
 }
 
 function setup(){
-
-    var canvas = createCanvas(1200,400);
+    var simpleArray=[1,2,3,4]
+    var complicatedArray=[[1,2],[3,4],[5,6]]
+    var item=complicatedArray[0]//[1,2]
+    console.log(item[0]);
+ var canvas = createCanvas(1200,400);
     engine = Engine.create();
     world = engine.world;
-
 
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
@@ -74,14 +80,22 @@ function draw(){
 }
 function mouseDragged(){
 console.log("I am being Dragged");
-var mousePosition={
-     x:mouseX,
-     y:mouseY,
+if(gameState===ONSLING){
+    var mousePosition={
+        x:mouseX,
+        y:mouseY,
+   }
+   Matter.Body.setPosition(bird.body,mousePosition);
 }
-Matter.Body.setPosition(bird.body,mousePosition);
 }
 function mouseReleased(){
     console.log("I am released");
     slingshot.fly();
-
+gameState=OFFSLING;
+}
+function keyPressed(){
+    if(keyCode===32){
+        console.log("pressed space");//ascii value of space is 32;
+         slingshot.attatched(bird.body);
+    }
 }

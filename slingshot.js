@@ -40,5 +40,8 @@ class Slingshot{
      fly(){
         this.slingshot.bodyA=null;
     }
-
+      attatched(body){   
+            this.slingshot.bodyA=body;
+            gameState=ONSLING;
+}
     }
