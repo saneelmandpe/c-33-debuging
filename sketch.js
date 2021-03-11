@@ -16,7 +16,7 @@ var gameState=ONSLING;
 
 var bgNight
 
-var URL="http://worldtimeapi.org/api/timezone/Asia/Kolkata";
+var URL="https://worldtimeapi.org/api/timezone/Asia/Kolkata";
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -58,7 +58,7 @@ function setup(){
     }
     slingshot = new Slingshot(bird,point);
     
-    getTime();
+    //getTime();
 
 }
 
