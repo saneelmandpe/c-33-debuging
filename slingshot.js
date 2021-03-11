@@ -15,7 +15,7 @@ class Slingshot{
         World.add(world,this.slingshot);
     }
     display(){
-        
+        push()
         if  (this.slingshot.bodyA  !=  null)  {//start
             var pointA  =  this.slingshot.bodyA.position;
             var pointB  =  this.point;
@@ -35,6 +35,7 @@ class Slingshot{
         image(this.sling1,200,20);
         image(this.sling2,170,20);
         //image(this.sling3,50,20);
+        pop()
     }
 
      fly(){

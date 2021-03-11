@@ -6,8 +6,8 @@ class Pig extends BaseClass {
     this.visibility=255;// 1111111[1 bit]
   }
     display() {
-        push();
-        fill('whi')
+        push()
+        fill('white');
         textSize(20);
           text('Score = ' + score,  750,  60);
         if(this.body.speed>3){
@@ -21,7 +21,7 @@ class Pig extends BaseClass {
         super.display();
         //console.log(this.body.speed);
         }
-                pop();
+                pop()
 
 }
     score(){

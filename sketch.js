@@ -63,7 +63,7 @@ function setup(){
 }
 
 function draw(){
-    //background(backgroundImg);
+    //background("white");
     Engine.update(engine);
    // console.log(box2.body.angle);
     box1.display();
@@ -109,6 +109,14 @@ function keyPressed(){
     if(keyCode===32){
         console.log("pressed space");//ascii value of space is 32;
          slingshot.attatched(bird.body);
+         bird.clearTrajectoryPath();
+         Matter.Body.setAngle(bird.body,0);
+         Matter.Body.setPosition(bird.body,
+            {
+             x:200,
+             y:50  
+         }
+         )
     }
 }
 async function getTime(){
