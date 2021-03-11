@@ -23,6 +23,7 @@ function preload() {
     backgroundImg = loadImage("sprites/bg.png");
     bgImg = backgroundImg;
     bgNight = loadImage("sprites/bg2.jpg");
+    getTime();
 }
 
 function setup(){
@@ -60,7 +61,7 @@ function setup(){
     }
     slingshot = new Slingshot(bird,point);
     
-    getTime();
+    
 
 }
 
