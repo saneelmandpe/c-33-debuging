@@ -1,30 +1,29 @@
 class Bird extends BaseClass {
   constructor(x,y){
-    super(x,y,50,50);
-    this.image = loadImage("sprites/bird.png");
-    this.trajectoryPath=[]
+    super(x,y,75,50);
+    this.image = loadImage("sprites/owl.png");
+
+    this.trajectoryPath=[]//creating an empty array
     this.smokeImage= loadImage("sprites/smoke.png");
   }
-
   display() {
-    //this.body.position.x = mouseX;
-    //this.body.position.y = mouseY;
-    push();
+    push();//start
     super.display();
-      
-     
       if (this.body.position.x > 220 && this.body.speed > 10) {
-          var positionArray = [this.body.position.x, this.body.position.y];//[xPosition of bird, yPosition of bird]; = 2 items
-          this.trajectoryPath.push(positionArray);//list of arrays = 2D array
+          var positionArray = [this.body.position.x, this.body.position.y];
+          this.trajectoryPath.push(positionArray);
       }
-      //console.log(this.trajectoryPath);
+//if the bird is offsling , then the trajectory path will be created as per the x and y position of the bird.
+      if(gameState===OFFSLING){
       for (var i = 0; i < this.trajectoryPath.length;  i++) {
          var item = this.trajectoryPath[i];
         image(this.smokeImage,item[0],item[1]);
       } 
-      pop();
+      pop();//end
     }
+  }
+  //clearing the trajectory path
     clearTrajectoryPath(){
       this.trajectoryPath=[]
     }
-}
+  }

@@ -1,3 +1,4 @@
+
 class Chain{
 constructor(constraint1,constraint2){
     var options={
@@ -7,6 +8,6 @@ constructor(constraint1,constraint2){
         length:10
     }   
     var chain=constraint.create(options);
-    World.add(world,chain);
+    World.add(world,chain);//adding chain to the world.
 }
 }
